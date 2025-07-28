@@ -1,6 +1,6 @@
-# Simulador de Movimento Browniano
+# Movimento Browniano
 
-Aplicativo Windows Desktop desenvolvido em .NET MAUI para simulação de Movimento Brownianos.
+Aplicativo desenvolvido em .NET MAUI para simulação de Movimento Browniano.
 
 ### Pré-requisitos
 
@@ -26,11 +26,6 @@ Aplicativo Windows Desktop desenvolvido em .NET MAUI para simulação de Movimen
    dotnet build -t:Run -f net9.0-windows10.0.19041.0
    ```
    Ou abra a solução no Visual Studio e execute a partir dele.
-
-
-## Plataforma Suportada
-
-- Windows Desktop (versão 10/11)
 
 ## Interface do Aplicativo
 

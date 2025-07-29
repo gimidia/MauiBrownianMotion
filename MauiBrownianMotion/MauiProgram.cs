@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
 using SkiaSharp.Views.Maui.Controls.Hosting;
+using Microsoft.Maui.LifecycleEvents;
 
 namespace MauiBrownianMotion
 {
@@ -10,7 +11,20 @@ namespace MauiBrownianMotion
             var builder = MauiApp.CreateBuilder();
             builder
                 .UseMauiApp<App>()
-                .UseSkiaSharp() 
+                .UseSkiaSharp()
+                .ConfigureLifecycleEvents(events =>
+                {
+#if WINDOWS
+                    events.AddWindows(windows => windows.OnWindowCreated((window) =>
+                    {
+                        var appWindow = window.AppWindow;
+                        if (appWindow.Presenter is Microsoft.UI.Windowing.OverlappedPresenter presenter)
+                        {
+                            presenter.Maximize();
+                        }
+                    }));
+#endif
+                }) 
                 .ConfigureFonts(fonts =>
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");

@@ -52,6 +52,6 @@ Aplicativo desenvolvido em .NET MAUI para simulação de Movimento Browniano.
 
 ## Interface do Aplicativo
 
-![Tela do Aplicativo](TelaMobimentoBrowniano.jpg)
+![Tela do Aplicativo](TelaMovimentoBrowniano.jpg)
 
 Este projeto é apenas para fins de estudo/demonstração.

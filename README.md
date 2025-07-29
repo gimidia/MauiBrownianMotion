@@ -1,6 +1,20 @@
 # Movimento Browniano
 
-Aplicativo desenvolvido em .NET MAUI para simulação de Movimento Browniano.
+Aplicação desenvolvida em .NET MAUI para simulação de Movimento Browniano.
+
+## Arquitetura
+
+O aplicativo segue o padrão de arquitetura MVVM (Model-View-ViewModel), que é o padrão recomendado para aplicativos .NET MAUI. Esta arquitetura separa a lógica de negócios e apresentação, melhorando a manutenção e testabilidade do código.
+
+- **Model**: Representa os dados e a lógica de negócios da aplicação.
+- **View**: Define a interface do usuário e a apresentação visual.
+- **ViewModel**: Atua como intermediário entre a View e o Model, fornecendo dados e comandos para a View.
+
+### Tecnologias Utilizadas
+
+- **SkiaSharp**: Biblioteca de gráficos 2D de alto desempenho utilizada para renderizar a simulação do Movimento Browniano na interface do usuário. O SkiaSharp oferece uma API poderosa para desenho vetorial, manipulação de imagens e efeitos visuais, sendo ideal para aplicações que exigem renderização personalizada e de alta performance.
+
+Esta estrutura facilita a separação de preocupaões e torna o código mais organizado e fácil de manter, enquanto aproveita o poder do SkiaSharp para renderização gráfica avançada.
 
 ### Pré-requisitos
 

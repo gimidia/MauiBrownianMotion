@@ -10,6 +10,13 @@ public static class BrownianModel
 {
     public static double[] GenerateBrownianMotion(double sigma, double mean, double initialPrice, int numDays)
     {
+        if (numDays <= 0)
+            throw new ArgumentException("O número de dias deve ser um valor positivo.", nameof(numDays));
+        if (initialPrice < 0)
+            throw new ArgumentException("O preço inicial não pode ser negativo.", nameof(initialPrice));
+        if (sigma < 0)
+            throw new ArgumentException("O valor de Sigma não pode ser negativo.", nameof(sigma));
+
         Random rand = new();
         double[] prices = new double[numDays];
         prices[0] = initialPrice;

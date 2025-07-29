@@ -52,10 +52,20 @@ public class BrownianViewModel : INotifyPropertyChanged
 
     private void GeneratePrices()
     {
-        var SigmaDecimal = Sigma / 100.0;
-        var MeanDecimal = Mean / 100.0;
-        var generated = BrownianModel.GenerateBrownianMotion(SigmaDecimal, MeanDecimal, InitialPrice, NumDays);
-        Prices = new ObservableCollection<double>(generated);
+        try
+        {
+            var SigmaDecimal = Sigma / 100.0;
+            var MeanDecimal = Mean / 100.0;
+            var generated = BrownianModel.GenerateBrownianMotion(SigmaDecimal, MeanDecimal, InitialPrice, NumDays);
+            Prices = new ObservableCollection<double>(generated);
+        }
+        catch (ArgumentException ex)
+        {
+            if (Application.Current?.MainPage != null)
+            {
+                Application.Current.MainPage.DisplayAlert("Erro de Validação", ex.Message, "OK");
+            }
+        }
     }
 
     public event PropertyChangedEventHandler PropertyChanged;

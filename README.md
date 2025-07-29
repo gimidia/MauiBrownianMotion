@@ -63,6 +63,39 @@ Esta estrutura facilita a separação de preocupaões e torna o código mais org
     ```
     *Você pode encontrar os frameworks de destino disponíveis no arquivo `MauiBrownianMotion.csproj`.*
 
+## Testes Unitários
+
+O projeto inclui um conjunto de testes unitários para garantir a qualidade e a corretude da lógica de negócio e do ViewModel. Os testes foram desenvolvidos utilizando o framework **xUnit**.
+
+### Abrangência dos Testes
+
+Os testes estão localizados no projeto `MauiBrownianMotion.Tests` e cobrem as seguintes áreas:
+
+-   **`BrownianModel` (Lógica de Negócio):**
+    -   **Caminhos Felizes:** Verificam se a simulação gera o número correto de pontos de dados e se todos os preços gerados são positivos.
+    -   **Caminhos Infelizes:** Garantem que o sistema lança exceções (`ArgumentException`) quando recebe entradas inválidas, como:
+        -   Número de dias negativo ou zero.
+        -   Preço inicial negativo.
+        -   Valor de Sigma (volatilidade) negativo.
+
+-   **`BrownianViewModel` (ViewModel):**
+    -   Verifica se o comando `GenerateCommand` popula corretamente a coleção de preços que é exibida na interface.
+    -   Confirma que o tratamento de exceções está funcionando, exibindo um alerta para o usuário em caso de dados inválidos, em vez de travar a aplicação.
+
+### Como Executar os Testes
+
+Você pode executar os testes unitários diretamente pelo terminal.
+
+1.  Abra um terminal na pasta raiz do projeto.
+2.  Navegue até o diretório do projeto de testes:
+    ```bash
+    cd MauiBrownianMotion.Tests
+    ```
+3.  Execute o seguinte comando para rodar os testes:
+    ```bash
+    dotnet test
+    ```
+O resultado dos testes será exibido no terminal, mostrando o número de testes aprovados, reprovados ou ignorados.
 
 ## Interface do Aplicativo
 
